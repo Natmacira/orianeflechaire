@@ -1,0 +1,251 @@
+body {
+	//burger menu estilos
+	&.hamburger-menu-active {
+		@media (max-width: $breakpoint-hamburger - 1px) {
+			header {
+				padding: 0;
+			}
+
+			nav {
+				ul {
+					display: block;
+					background: white;
+					position: fixed;
+					z-index: 5;
+					width: 100%;
+				}
+
+				img.burger-menu-close {
+					display: block;
+					z-index: 6;
+					position: fixed;
+					width: 20px;
+					top: 33px;
+				}
+			}
+		}
+	}
+
+	header {
+		padding: 0 10px;
+		background-image: url(img/background-header-mobile.svg);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		overflow: hidden;
+
+		@media (min-width: 640px) {
+			background-image: url(img/background-header-desktop.png);
+			background-position-y: -75px;
+			background-size: cover;
+			// padding: 0;
+		}
+
+		h1 {
+			font-size: 31px;
+			font-family: griffith-gothic-condensed, sans-serif;
+			color: white;
+			font-weight: 900;
+			margin-top: -23px;
+			position: relative;
+			z-index: 4;
+			width: 95%;
+			max-width: 300px;
+			padding-bottom: 25px;
+			margin-left: auto;
+			margin-right: auto;
+
+			@media (min-width: 640px) {
+				position: absolute;
+				left: 10.4%;
+				margin-top: 50px;
+				width: 560px;
+				max-width: none;
+				font-size: 45px;
+			}
+
+			@media (min-width: 1000px) {
+				font-size: 56px;
+			}
+		}
+
+		#picture-worker {
+			margin-left: -10px;
+			margin-top: 25px;
+			z-index: 1;
+			width: 95%;
+			position: relative;
+			max-width: 500px;
+
+			@media (min-width: 640px) {
+				max-width: none;
+				float: right;
+				margin-right: 7%;
+				width: 55%;
+				margin-top: 6%;
+			}
+		}
+
+		.logo-img {
+			transition: width 0.5s;
+			width: 130px;
+			padding-top: 10px;
+
+			@media (min-width: 640px) {
+				width: 200px;
+			}
+		}
+
+		.decoration-line {
+			position: absolute;
+			width: 25%;
+			top: 0;
+			right: 0;
+			display: block;
+			height: 100%;
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			&.pink {
+				background-image: url(img/line-pink.svg);
+				right: -7px;
+				z-index: 2;
+				top: -13px;
+				width: 40%;
+
+				@media (min-width: 640px) {
+					right: -47px;
+					z-index: 2;
+					top: -93px;
+					width: 40%;
+					background-position-x: right;
+				}
+			}
+
+			&.green {
+				background-image: url(img/line-green.svg);
+				right: -12px;
+				z-index: 0;
+				top: -13px;
+				width: 47%;
+
+				@media (min-width: 640px) {
+					right: -2px;
+					z-index: 0;
+					top: -77px;
+					width: 47%;
+					background-position-x: right;
+				}
+			}
+
+			&.black {
+				background-image: url("img/line-black.svg");
+				right: -17px;
+				width: 55%;
+				top: -3px;
+
+				@media (min-width: 640px) {
+					right: 0;
+					width: 55%;
+					top: -64px;
+					background-position-x: right;
+				}
+			}
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-between;
+
+			button {
+				padding: 20px 0 0;
+				z-index: 6;
+				position: relative;
+
+				.burger-menu-open {
+					width: 30px;
+				}
+
+				img.burger-menu-close {
+					display: none;
+				}
+
+				@media (min-width: $breakpoint-hamburger) {
+					display: none;
+				}
+			}
+
+			ul {
+				display: none;
+				color: $theme-blue;
+				font-size: 20px;
+				font-family: griffith-gothic-condensed, sans-serif;
+				font-weight: 700;
+
+				@media (min-width: $breakpoint-hamburger) {
+					display: flex;
+					background: transparent;
+					position: relative;
+					z-index: 7;
+				}
+
+				li {
+					margin: 20px;
+					border: 1px solid $theme-blue;
+					border-radius: 50px;
+					padding: 10px 15px;
+					float: left;
+					clear: both;
+
+					@media (min-width: $breakpoint-hamburger) {
+						border: 0;
+						color: $theme-blue;
+						background: #ffffff;
+						white-space: nowrap;
+						margin: 20px 5px;
+					}
+				}
+			}
+		}
+	}
+
+	&.page-scrolled:not(.hamburger-menu-active) {
+		header {
+			padding-top: 93px;
+
+			#main-nav {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				background: $theme-blue;
+				left: 0;
+				z-index: 6;
+				padding: 0 8px;
+
+				.logo-img {
+					padding-top: 6px;
+					padding-bottom: 2px;
+
+					@media (min-width: 640px) {
+						width: 130px;
+					}
+				}
+
+				ul {
+					li {
+						@media (min-width: $breakpoint-hamburger) {
+							margin: 7px 5px;
+							height: 40px;
+							padding: 8px 15px;
+						}
+					}
+				}
+
+				#burger-menu-button {
+					padding: 6px 0 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+footer {
+    position: relative;
+    padding: 0 10px;
+    background-image: url(img/background-footer-mobile.svg);
+    margin-top: -17px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 437px;
+
+    @media (min-width: 640px) {
+        padding: 0 30px;
+		height: 606px;
+    }
+
+    img.logo-img {
+        width: 113px;
+        padding-top: 20px;
+        position: absolute;
+        left: 10px;
+        bottom: 40px;
+
+        @media (min-width: 640px) {
+            padding-left: 25px;
+            width: 163px;
+        }
+    }
+
+    ul {
+        position: absolute;
+        bottom: 35px;
+        display: flex;
+        right: 0;
+        @media (min-width: 640px) {
+            padding-right: 30px;
+        }
+    }
+
+    h2 {
+        color: white;
+        font-size: 36px;
+        font-family: griffith-gothic-condensed, sans-serif;
+        text-align: center;
+        font-weight: 900;
+        text-transform: none;
+        position: absolute;
+        top: 93px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        @media (min-width: 640px) {
+            font-size: 66px;
+			top: 140px;
+        }
+    }
+
+    a.mail {
+        position: absolute;
+        top: 230px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 32px;
+        font-weight: 400;
+        font-family: griffith-gothic-condensed, sans-serif;
+        background: rgb(193, 237, 204);
+        border-radius: 87px;
+        padding: 20px;
+        text-align: center;
+        width: 270px;
+
+        @media (min-width: 640px) {
+            font-size: 46px;
+            width: 385px;
+            margin-top: 0;
+			top: 325px;
+        }
+    }
+}
