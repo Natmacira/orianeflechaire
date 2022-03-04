@@ -49,6 +49,32 @@ body.page-id-2462 {
     .wp-block-button.is-style-outline.button:hover {
         color:#c96e36;
     }
+    
+    .descripcion-libro {
+        font-family: 'ZillaSlab';
+        color: #2d2825
+    }
+
+    .titulo-descripcion-libro {
+        font-family: 'ZillaSlab';
+        font-weight: 700;
+        color: #2d2825
+    }
+
+    .carrito-pagina-libro {
+        font-family: 'ZillaSlab';
+        color: #2d2825
+    }
+
+    a.button.alt {
+        background-color: transparent;
+        color: #2d2825;
+    }
+
+    a.button.alt:hover {
+        color:#c96e36;
+        background-color: transparent;
+    }
 }
 
    
