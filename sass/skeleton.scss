@@ -64,8 +64,23 @@ body.page-id-2462 {
     .carrito-pagina-libro {
         font-family: 'ZillaSlab';
         color: #2d2825;
+        background-color: #ffffff;
+        position: relative;
+        z-index: 5;
+       
+     }
+
+     .carrito-pagina-libro::before {
         background-image: url('img/oriane-tira-libro.jpeg');
-    }
+        position: absolute;
+        width: 100vw;
+        top: 0;
+        height: 100%;
+        left: -367px;
+        content: "  ";
+        background-repeat: repeat;
+     }
+
 
     a.button.alt {
         background-color: transparent;
