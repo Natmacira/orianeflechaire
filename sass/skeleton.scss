@@ -70,7 +70,7 @@ body.page-id-2462 {
        
      }
 
-     .carrito-pagina-libro::before {
+     #carrito-producto::before {
         background-image: url('img/oriane-tira-libro.jpeg');
         position: absolute;
         width: 100vw;
@@ -78,7 +78,7 @@ body.page-id-2462 {
         height: 100%;
         left: -367px;
         content: "  ";
-        background-repeat: repeat;
+        z-index: 1;
      }
 
 
