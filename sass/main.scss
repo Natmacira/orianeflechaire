@@ -5,19 +5,14 @@
 // sass main.scss ../style.min.css --style=compressed
 // sass --watch main.scss:../style.min.css --style=compressed
 
-//$theme-blue : #0066ff;
-//$theme-black: #333333;
-//$theme-green: #c1edcc;
-//$theme-pink : #f5beae;
-
-
-
-
-
-
+$theme-dark-orange : #6e4830;
+$theme-orange: #c96e36;
+$theme-dark-gray: #2d2825;
+$theme-gray: #cccccc;
 
 // @import "normalize";
- @import "fonts";
- @import "skeleton";
+@import "fonts";
+@import "skeleton";
 @import "header";
- @import "footer";
+@import "footer";
+@import "woocommerce";
