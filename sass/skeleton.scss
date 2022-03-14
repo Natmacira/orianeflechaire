@@ -16,12 +16,12 @@ html {
 
 body.page-id-2445,
 body.page-id-2462 {
-    background-color: #cccccc;
+    background-color: white;
 
     header,
     .site,
     #masthead.site-header {
-        background-color: #cccccc;
+        background-color: white;
     }
 
     .site-content {
@@ -51,7 +51,16 @@ body.page-id-2462 {
             color: #2d2825;
         }
 
+        h4 {
+            font-family:"ZillaSlab";
+            color: #2d2825;
+            text-transform: none;
+            font-size: 18px;
+        }
+
         .foto-libro {
+
+            max-width: 200px;
             box-shadow: 10px 5px 5px #6e4830;
         }
     }
