@@ -53,3 +53,26 @@ function replace_templates_via_plugin( $template, $template_name, $template_path
 
 	return $template;
 }
+
+add_action( 'template_redirect', 'redirect_posts_to_cinco_meses' );
+
+function redirect_posts_to_cinco_meses(){
+    if ( is_singular( 'product' ) || is_page( 'tienda' ) ) {
+		$cinco_meses_page = get_page_by_path( 'cinco-meses-de-infinito' );
+
+		if ( $cinco_meses_page ) {
+			wp_safe_redirect( get_the_permalink( $cinco_meses_page ), 301 );
+			exit;
+		}
+	}
+}
+
+function replace_product_link( $post_link, $post ) {
+    if ( 'product' == get_post_type( $post ) ) {
+        return '';
+    }
+
+    return $post_link;
+}
+
+add_filter( 'post_type_link', 'replace_product_link', 10, 2 );
