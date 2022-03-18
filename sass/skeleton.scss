@@ -2,152 +2,299 @@ html {
     scroll-behavior: smooth;
 }
 
-#post-2445 {
-    .woocommerce {
-        background-color: #fff;
-        padding-left: 50px;
-        padding-right: 50px;
+body {
+    #page {
+        #content {
+            #primary {
+                #main {
+                    .woocommerce .woocommerce-cart-form {
+                        .product-remove,
+                        .product-thumbnail {
+                            display: none;
+                        }
+                    }
+
+                    #post-2445 {
+                        .woocommerce {
+                            background-color: #fff;
+                            padding-left: 50px;
+                            padding-right: 50px;
+                        }
+
+                        * {
+                            font-family: "ZillaSlab";
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    * {
-        font-family: "ZillaSlab";
+    &.page-id-2462 {
+        background-color: white;
+
+        #page {
+            header {
+                background-color: white;
+            }
+
+            #content {
+                overflow: hidden;
+
+                #primary {
+                    @media (max-width: 600px) {
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+
+                    #main {
+                        .first-section {
+                            h1 {
+                                color: #2d2825;
+                                font-size: 42px;
+                                font-family: "ZillaSlab";
+                                margin-bottom: 0;
+                                text-transform: none;
+                            }
+
+                            h2 {
+                                font-size: 25px;
+                                font-family: "ZillaSlab";
+                                font-style: normal;
+                                color: #2d2825;
+                            }
+
+                            h4 {
+                                font-family: "ZillaSlab";
+                                color: #2d2825;
+                                text-transform: none;
+                                font-size: 18px;
+                            }
+
+                            .foto-libro {
+                                max-width: 200px;
+                                box-shadow: 10px 5px 5px #6e4830;
+                            }
+
+                            > .wp-block-column:nth-child(2) {
+                                @media (min-width: 782px) {
+                                    flex-grow: 2;
+                                }
+                            }
+                        }
+
+                        section.section-with-background {
+                            position: relative;
+
+                            &:before {
+                                background-color: #e4dbc6;
+                                position: absolute;
+                                width: 100vw;
+                                top: 0;
+                                height: 100%;
+                                left: calc((100% - 100vw) / 2);
+                                content: " ";
+                            }
+
+                            > div.wp-block-group__inner-container {
+                                position: relative;
+                                flex-wrap: wrap;
+                                display: flex;
+                                padding: 40px 0;
+
+                                @media (min-width: 600px) {
+                                    padding: 60px 0;
+                                }
+
+                                .wp-block-image {
+                                    margin: 5px;
+                                    flex: 25%;
+
+                                    @media (min-width: 600px) {
+                                        flex: 20%;
+                                    }
+                                }
+                            }
+
+                            &.oriane-custom-gallery-container {
+                                .oriane-gallery-image {
+                                    cursor: pointer;
+                                }
+
+                                .oriane-custom-gallery-button {
+                                    border: 0;
+                                    border-radius: 5px;
+                                    width: 40px;
+                                    height: 35px;
+                                    line-height: 35px;
+                                    font-size: 20px;
+                                    background-color: #ffffff;
+                                    display: block;
+                                    position: absolute;
+                                    font-weight: 700;
+                                    color: #000000;
+                                    padding: 0;
+
+                                    &#oriane-custom-gallery-close {
+                                        top: 25px;
+                                        right: 25px;
+                                    }
+
+                                    &#oriane-custom-gallery-prev,
+                                    &#oriane-custom-gallery-next {
+                                        top: 0;
+                                        bottom: 0;
+                                        margin: auto;
+                                    }
+
+                                    &#oriane-custom-gallery-prev {
+                                        left: 25px;
+                                    }
+
+                                    &#oriane-custom-gallery-next {
+                                        right: 25px;
+                                    }
+
+                                    .arrow {
+                                        border: solid black;
+                                        border-width: 0 3px 3px 0;
+                                        display: inline-block;
+                                        padding: 3px;
+                                    }
+
+                                    .right {
+                                        transform: rotate(-45deg);
+                                        -webkit-transform: rotate(-45deg);
+                                        margin-left: -3px;
+                                        margin-bottom: 2px;
+                                    }
+
+                                    .left {
+                                        transform: rotate(135deg);
+                                        -webkit-transform: rotate(135deg);
+                                        margin-right: -3px;
+                                        margin-bottom: 2px;
+                                    }
+                                }
+                            }
+                        }
+
+                        section#carrito-producto {
+                            padding: 50px 0 25px;
+                        }
+
+                        #special-separator {
+                            position: relative;
+                            height: 100px;
+
+                            hr {
+                                background-image: url("img/oriane-tira-libro.jpeg");
+                                position: absolute;
+                                width: 100vw;
+                                top: 0;
+                                height: 100%;
+                                left: calc((100% - 100vw) / 2);
+                                border: 0;
+                                background-color: transparent;
+                            }
+                        }
+
+                        .wp-block-button.is-style-outline.button {
+                            font-family: "ZillaSlab";
+                            color: #2d2825;
+                        }
+
+                        .wp-block-button.is-style-outline.button:hover {
+                            color: #c96e36;
+                        }
+
+                        .descripcion-libro {
+                            font-family: "ZillaSlab";
+                            color: #2d2825;
+                        }
+
+                        .titulo-descripcion-libro {
+                            font-family: "ZillaSlab";
+                            font-weight: 700;
+                            color: #2d2825;
+                        }
+
+                        .wp-block-jetpack-slideshow
+                            .wp-block-jetpack-slideshow_container
+                            ul.wp-block-jetpack-slideshow_swiper-wrapper
+                            #carrito-producto {
+                            position: relative;
+                            padding: 20px 0;
+
+                            @media (min-width: 600px) {
+                                padding: 40px 0;
+                            }
+
+                            div.woocommerce {
+                                font-family: "ZillaSlab";
+                                color: #2d2825;
+                                background-color: #ffffff;
+                                z-index: 2;
+                                position: relative;
+                                padding: 20px;
+                                border-radius: 10px;
+                                border: solid;
+                                border-color: #2d2825;
+                                @media (min-width: 600px) {
+                                    padding: 40px;
+                                }
+                            }
+                        }
+
+                        a.button.alt {
+                            background-color: transparent;
+                            color: #2d2825;
+                        }
+
+                        a.button.alt:hover {
+                            color: #c96e36;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #oriane-custom-gallery-modal {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+
+        &.active {
+            display: flex;
+        }
+
+        #orianeGalleryModalImage {
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            padding: 5%;
+
+            @media screen and (min-width: 768px) {
+                width: 60%;
+            }
+
+            @media screen and (min-width: 1200px) {
+                width: 50%;
+            }
+        }
     }
 }
 
-body.page-id-2445,
-body.page-id-2462 {
-    background-color: white;
-
-    header,
-    .site,
-    #masthead.site-header {
-        background-color: white;
-    }
-
-    .site-content {
-        overflow: hidden;
-
-        .container {
-            @media (max-width: 600px) {
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-        }
-    }
-
-    .first-section {
-        h1 {
-            color: #2d2825;
-            font-size: 42px;
-            font-family: "ZillaSlab";
-            margin-bottom: 0;
-            text-transform: none;
-        }
-
-        h2 {
-            font-size: 25px;
-            font-family: "ZillaSlab";
-            font-style: normal;
-            color: #2d2825;
-        }
-
-        h4 {
-            font-family:"ZillaSlab";
-            color: #2d2825;
-            text-transform: none;
-            font-size: 18px;
-        }
-
-        .foto-libro {
-
-            max-width: 200px;
-            box-shadow: 10px 5px 5px #6e4830;
-        }
-    }
-    .wp-block-button.is-style-outline.button {
-        font-family: "ZillaSlab";
-        color: #2d2825;
-    }
-
-    .wp-block-button.is-style-outline.button:hover {
-        color: #c96e36;
-    }
-
-    .descripcion-libro {
-        font-family: "ZillaSlab";
-        color: #2d2825;
-    }
-
-    .titulo-descripcion-libro {
-        font-family: "ZillaSlab";
-        font-weight: 700;
-        color: #2d2825;
-    }
-
-    .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_container ul.wp-block-jetpack-slideshow_swiper-wrapper:before {
-
-        background-color: #e4dbc6;
-        position: absolute;
-        width: 100vw;
-        top: 0;
-        height: 100%;
-        left: 700px;
-        content: " ";
-        z-index: -1;
-    }
-
-
-    /*
-    .carrito-pagina-libro {
-        font-family: 'ZillaSlab';
-        color: #2d2825;
-        background-color: #ffffff;
-        position: relative;
-        z-index: 5;
-     }*/
-
-    #carrito-producto {
-        position: relative;
-        padding: 20px 0;
-
-        @media (min-width: 600px) {
-            padding: 40px 0;
-        }
-/*
-        &:before {
-            background-image: url("img/oriane-tira-libro.jpeg");
-            position: absolute;
-            width: 100vw;
-            top: 0;
-            height: 100%;
-            left: calc((100% - 100vw) / 2);
-            content: " ";
-            z-index: 1;
-        }*/
-
-        div.woocommerce {
-            font-family: "ZillaSlab";
-            color: #2d2825;
-            background-color: #ffffff;
-            z-index: 2;
-            position: relative;
-            padding: 20px;
-            border-radius: 10px;
-            border: solid;
-            border-color: #2d2825;
-            @media (min-width: 600px) {
-                padding: 40px;
-            }
-        }
-    }
-
-    a.button.alt {
-        background-color: transparent;
-        color: #2d2825;
-    }
-
-    a.button.alt:hover {
-        color: #c96e36;
-        background-color: transparent;
-    }
+.oriane-custom-gallery-modal-active {
+    overflow: hidden;
 }

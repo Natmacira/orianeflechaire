@@ -11,8 +11,28 @@
 define( 'ORIANE_FLECHAIRE_VERSION', '1.0.2' );
 
 add_action( 'init', function() {
-    wp_enqueue_style( 'oriane_flechaire_styles', '/wp-content/plugins/orianeflechaire/style.min.css', 
-    array(), ORIANE_FLECHAIRE_VERSION );
+    wp_enqueue_style( 
+		'oriane_flechaire_styles', 
+		'/wp-content/plugins/orianeflechaire/style.min.css', 
+    	array(), 
+		ORIANE_FLECHAIRE_VERSION 
+	);
+
+	add_shortcode( 'oriane_custom_gallery', function() {
+		wp_enqueue_script( 
+			'oriane_custom_gallery_script', 
+			'/wp-content/plugins/orianeflechaire/js/custom-gallery.js', 
+			array( 'jquery' ), 
+			ORIANE_FLECHAIRE_VERSION, 
+			true 
+		);
+
+		return '<div id="oriane-custom-gallery-modal"><img id="oriane-custom-gallery-image" src="" />
+			<button id="oriane-custom-gallery-close" class="oriane-custom-gallery-button">X</button>
+			<button id="oriane-custom-gallery-next" class="oriane-custom-gallery-button"><i class="arrow right"></i></button>
+			<button id="oriane-custom-gallery-prev" class="oriane-custom-gallery-button"><i class="arrow left"></i></button>
+		</div>';
+	} );
 } );
 
 /**
