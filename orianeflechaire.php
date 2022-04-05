@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Oriane Flechaire
- * Version:     1.0.5
+ * Version:     1.0.6
  * Description: Customizaciones para el sitio orianeflechaire.com
  * Author:      Natalia Ciraolo and Josefina Lucía
  * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-define( 'ORIANE_FLECHAIRE_VERSION', '1.0.5' );
+define( 'ORIANE_FLECHAIRE_VERSION', '1.0.6' );
 
 add_action( 'init', function() {
     wp_enqueue_style( 
@@ -38,8 +38,6 @@ add_action( 'init', function() {
 /**
  * Automatically add Oriane's book to cart on visit.
  */
-add_action( 'template_redirect', 'add_product_to_cart', 999 );
-
 function add_product_to_cart() {
 	if ( ! is_admin() ) {
 		$product_id = 2449; // Oriane's book product ID.
@@ -62,8 +60,11 @@ function add_product_to_cart() {
 	}
 }
 
-add_filter( 'woocommerce_locate_template', 'replace_templates_via_plugin', 10, 3 );
+add_action( 'template_redirect', 'add_product_to_cart', 999 );
 
+/**
+ * Replace email templates with the ones in this plugin.
+ */
 function replace_templates_via_plugin( $template, $template_name, $template_path ) {
 	$plugin_path = trailingslashit( plugin_dir_path( __FILE__ ) )  . '/templates/emails/';
 	
@@ -74,8 +75,11 @@ function replace_templates_via_plugin( $template, $template_name, $template_path
 	return $template;
 }
 
-add_action( 'template_redirect', 'redirect_posts_to_cinco_meses' );
+add_filter( 'woocommerce_locate_template', 'replace_templates_via_plugin', 10, 3 );
 
+/**
+ * Redirects Shop Singles to Cinco Meses Page.
+ */
 function redirect_posts_to_cinco_meses(){
     if ( is_singular( 'product' ) || is_page( 'tienda' ) ) {
 		$cinco_meses_page = get_page_by_path( 'cinco-meses-de-infinito' );
@@ -87,6 +91,11 @@ function redirect_posts_to_cinco_meses(){
 	}
 }
 
+add_action( 'template_redirect', 'redirect_posts_to_cinco_meses' );
+
+/**
+ * Removes post link since there will be no other product page but Cinco Meses.
+ */
 function replace_product_link( $post_link, $post ) {
     if ( 'product' == get_post_type( $post ) ) {
         return '';
@@ -96,3 +105,29 @@ function replace_product_link( $post_link, $post ) {
 }
 
 add_filter( 'post_type_link', 'replace_product_link', 10, 2 );
+
+
+/**
+ * Makes optional certain required fields.
+ */
+function wc_unrequire_wc_phone_field( $fields ) {
+	$fields['billing_phone']['required'] = false;
+	return $fields;
+}
+
+add_filter( 'woocommerce_billing_fields', 'wc_unrequire_wc_phone_field');
+
+/**
+ * Remove certain fields from checkout form.
+ **/
+function wc_remove_checkout_fields( $fields ) {
+    unset( $fields['billing']['billing_company'] );
+    unset( $fields['billing']['billing_address_2'] );
+	unset( $fields['shipping']['shipping_address_2'] );
+    unset( $fields['shipping']['shipping_company'] );
+    // unset( $fields['order']['order_comments'] );
+
+    return $fields;
+}
+
+add_filter( 'woocommerce_checkout_fields', 'wc_remove_checkout_fields' );

@@ -15,16 +15,16 @@ body {
                     }
 
                     #post-2445 {
-                        .woocommerce {
-                            background-color: #fff;
-                            padding-left: 50px;
-                            padding-right: 50px;
+                        // .woocommerce {
+                        //     background-color: #fff;
+                        //     padding-left: 50px;
+                        //     padding-right: 50px;
 
-                            @media (max-width: 600px) {
-                                padding-left: 0;
-                                padding-right: 0;
-                            }
-                        }
+                        //     @media (max-width: 600px) {
+                        //         padding-left: 0;
+                        //         padding-right: 0;
+                        //     }
+                        // }
 
                         * {
                             font-family: "ZillaSlab";
@@ -35,7 +35,7 @@ body {
         }
     }
 
-    &.page-id-2462 {
+    &.page-id-2462 /* Cinco Meses de Infinito */ {
         background-color: white;
 
         #page {
@@ -186,6 +186,17 @@ body {
 
                         section#carrito-producto {
                             padding: 50px 0 25px;
+
+                            .woocommerce {
+                                .cart-collaterals {
+                                    .cart_totals {
+                                        .woocommerce-shipping-destination {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                            }
                         }
 
                         #special-separator {
@@ -251,7 +262,7 @@ body {
                             }
                         }
 
-                        a.button.alt {
+                        /*a.button.alt {
                             background-color: transparent;
                             color: #2d2825;
                         }
@@ -259,8 +270,51 @@ body {
                         a.button.alt:hover {
                             color: #e4dbc6;
                             background-color: transparent;
+                        }*/
+                    }
+                }
+            }
+        }
+    }
+
+    &.page-id-2445 /* Finalizar Compra */ {
+        #content {
+            #primary {
+                padding-left: 0;
+                padding-right: 0;
+
+                #customer_details {
+                    .col-2 {
+                        display: none;
+                    }
+
+                    .col-1 {
+                        width: 100%;
+
+                        .woocommerce-billing-fields__field-wrapper {
+                            @media (min-width: 600px) {
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                .form-row {
+                                    flex: 50%;
+
+                                    input {
+                                        border: 1px solid #ccc;;
+                                    }
+                                }
+                            }
+
+                            #billing_country_field {
+                                visibility: hidden;
+                                position: absolute;
+                            }
                         }
                     }
+                }
+
+                #order_review_heading {
+                    padding: 0 15px;
                 }
             }
         }
