@@ -45,25 +45,50 @@ body {
 
                     #main {
                         .first-section {
+                            .wp-block-group__inner-container {
+                                text-align: center;
+                                padding: 50px 0;
+                            }
+
                             h1 {
                                 color: #2d2825;
                                 font-size: 42px;
                                 font-family: "ZillaSlab";
-                                margin-bottom: 0;
+                                line-height: 1.1;
                                 text-transform: none;
+                                letter-spacing: 1px;
+                                position: relative;
+                                display: inline-block;
+                                max-width: 400px;
+                                
+                                @media (min-width: 600px) {
+                                    line-height: 1.5;
+                                    margin-bottom: 0;
+                                    max-width: none;
+                                }
 
                                 &:before {
                                     content: "";
                                     display: block;
                                     position: absolute;
-                                    top: -180px;
-                                    right: 121px;
+                                    top: -200px;
+                                    right: 0;
                                     background-image: url("img/flor.png");
-                                    height: 500px;
-                                    width: 400px;
-                                    background-size: contain;
+                                    height: 700px;
+                                    width: 500px;
+                                    background-size: cover;
                                     background-repeat: no-repeat;
                                     pointer-events: none;
+                                    opacity: 0.3;
+
+                                    @media (min-width: 600px) {
+                                        opacity: 1;
+                                        height: 500px;
+                                        width: 400px;
+                                        background-size: contain;
+                                        top: -180px;
+                                        right: 121px;
+                                    }
                                 }
                             }
 
@@ -79,6 +104,8 @@ body {
                                 color: #2d2825;
                                 text-transform: none;
                                 font-size: 18px;
+                                letter-spacing: 1px;
+                                line-height: 1;
                             }
 
                             p {
@@ -235,6 +262,10 @@ body {
                                                 float: left;
                                                 width: 50%;
                                                 display: block;
+
+                                                &:before {
+                                                    display: none;
+                                                }
                                             }
                                         }
                                     }
@@ -255,7 +286,8 @@ body {
                                         td,
                                         table,
                                         thead,
-                                        tbody {
+                                        tbody,
+                                        th {
                                             display: block;
                                         }
 
@@ -263,6 +295,11 @@ body {
                                         th,
                                         td {
                                             border: 0;
+                                            background-color: transparent;
+
+                                            &:before {
+                                                display: none;
+                                            }
                                         }
 
                                         .order-total td,
