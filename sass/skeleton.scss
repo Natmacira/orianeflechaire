@@ -14,25 +14,16 @@ body {
                         }
                     }
 
-                    #post-2445 {
-                        // .woocommerce {
-                        //     background-color: #fff;
-                        //     padding-left: 50px;
-                        //     padding-right: 50px;
-
-                        //     @media (max-width: 600px) {
-                        //         padding-left: 0;
-                        //         padding-right: 0;
-                        //     }
-                        // }
-
-                        * {
-                            font-family: "ZillaSlab";
-                        }
+                    #post-2445 * {
+                        font-family: "ZillaSlab";
                     }
                 }
             }
         }
+    }
+
+    &.woocommerce-page * {
+        font-family: "ZillaSlab";
     }
 
     &.page-id-2462 /* Cinco Meses de Infinito */ {
@@ -60,6 +51,20 @@ body {
                                 font-family: "ZillaSlab";
                                 margin-bottom: 0;
                                 text-transform: none;
+
+                                &:before {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    top: -180px;
+                                    right: 121px;
+                                    background-image: url("img/flor.png");
+                                    height: 500px;
+                                    width: 400px;
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    pointer-events: none;
+                                }
                             }
 
                             h2 {
@@ -76,12 +81,21 @@ body {
                                 font-size: 18px;
                             }
 
+                            p {
+                                font-style: italic;
+
+                                @media (min-width: 600px) {
+                                    width: 50%;
+                                    margin-left: 50%;
+                                }
+                            }
+
                             .foto-libro {
                                 max-width: 200px;
                                 box-shadow: 10px 5px 5px #6e4830;
                             }
 
-                            > .wp-block-column:nth-child(2) {
+                            >.wp-block-column:nth-child(2) {
                                 @media (min-width: 782px) {
                                     flex-grow: 2;
                                 }
@@ -92,7 +106,7 @@ body {
                             position: relative;
 
                             &:before {
-                                background-color: #e4dbc6;
+                                background-color: #faf5e0;
                                 position: absolute;
                                 width: 100vw;
                                 top: 0;
@@ -101,7 +115,7 @@ body {
                                 content: " ";
                             }
 
-                            > div.wp-block-group__inner-container {
+                            >div.wp-block-group__inner-container {
                                 position: relative;
                                 flex-wrap: wrap;
                                 display: flex;
@@ -188,10 +202,72 @@ body {
                             padding: 50px 0 25px;
 
                             .woocommerce {
+                                .woocommerce-notices-wrapper {
+                                    display: none;
+                                }
+
+                                .woocommerce-cart-form {
+                                    tr,
+                                    td,
+                                    table,
+                                    thead,
+                                    tbody {
+                                        display: inline-block;
+                                    }
+                                    
+                                    table {
+                                        border: 0;
+                                        margin: 0;
+
+
+                                        th,
+                                        td {
+                                            border: 0;
+
+                                            &:not(.product-quantity) {
+                                                visibility: hidden;
+                                                height: 0;
+                                                width: 0;
+                                                position: absolute;
+                                            }
+
+                                            &.product-quantity {
+                                                float: left;
+                                                width: 50%;
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+
                                 .cart-collaterals {
                                     .cart_totals {
+                                        float: none;
+                                        width: auto;
+
+                                        h2,
+                                        .cart-subtotal,
                                         .woocommerce-shipping-destination {
                                             display: none;
+                                        }
+
+                                        tr,
+                                        td,
+                                        table,
+                                        thead,
+                                        tbody {
+                                            display: block;
+                                        }
+
+                                        table,
+                                        th,
+                                        td {
+                                            border: 0;
+                                        }
+
+                                        .order-total td,
+                                        .order-total th {
+                                            display: inline;
                                         }
                                     }
                                 }
@@ -261,6 +337,7 @@ body {
                                 border-radius: 10px;
                                 border: solid;
                                 border-color: #2d2825;
+
                                 @media (min-width: 600px) {
                                     padding: 40px;
                                 }
@@ -305,7 +382,7 @@ body {
                                     flex: 50%;
 
                                     input {
-                                        border: 1px solid #ccc;;
+                                        border: 1px solid #ccc;
                                     }
                                 }
                             }
