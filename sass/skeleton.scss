@@ -201,17 +201,22 @@ body {
 
                         #special-separator {
                             position: relative;
-                            height: 100px;
+                            height: 160px;
 
                             hr {
-                                background-image: url("img/oriane-tira-libro.jpeg");
+                                background-image: url("img/cinta.jpg");
                                 position: absolute;
                                 width: 100vw;
                                 top: 0;
                                 height: 100%;
                                 left: calc((100% - 100vw) / 2);
                                 border: 0;
+                                background-size: cover;
                                 background-color: transparent;
+
+                                @media (min-width: 600px) {
+                                    background-size: contain;
+                                }
                             }
                         }
 

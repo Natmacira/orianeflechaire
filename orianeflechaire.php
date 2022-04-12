@@ -35,6 +35,19 @@ add_action( 'init', function() {
 	} );
 } );
 
+
+add_action( 'wp', function() {
+	if ( is_page( 'cinco-meses-de-infinito' ) ) {
+		wp_enqueue_script( 
+			'oriane_custom_cart_script', 
+			'/wp-content/plugins/orianeflechaire/js/custom-cart.js', 
+			array( 'jquery' ), 
+			ORIANE_FLECHAIRE_VERSION, 
+			true 
+		);
+	}
+} );
+
 /**
  * Automatically add Oriane's book to cart on visit.
  */
@@ -81,7 +94,7 @@ add_filter( 'woocommerce_locate_template', 'replace_templates_via_plugin', 10, 3
  * Redirects Shop Singles to Cinco Meses Page.
  */
 function redirect_posts_to_cinco_meses(){
-    if ( is_singular( 'product' ) || is_page( 'tienda' ) ) {
+    if ( is_singular( 'product' ) || is_page( 'tienda' ) || is_page( 'carrito' ) ) {
 		$cinco_meses_page = get_page_by_path( 'cinco-meses-de-infinito' );
 
 		if ( $cinco_meses_page ) {
