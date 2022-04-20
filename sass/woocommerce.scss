@@ -391,16 +391,28 @@ body.page {
     .woocommerce a.button.alt,
     .woocommerce button.button.alt,
     .woocommerce input.button.alt {
-        background-color: $theme-dark-orange;
-        color: #fff;
+        //background-color: $theme-dark-orange;
+        //color: #fff;
         -webkit-font-smoothing: antialiased;
+        border-color: #2d2825;
+        color: #2d2825;
+        background-color: #ffffff;
+        border: solid 2px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        &:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+            background-color: #2d2825;
+        }
     }
     .woocommerce #respond input#submit.alt:hover,
     .woocommerce a.button.alt:hover,
     .woocommerce button.button.alt:hover,
     .woocommerce input.button.alt:hover {
-        background-color: $theme-orange;
-        color: #fff;
+        //background-color: $theme-orange;
+        // color: #fff;
     }
     .woocommerce #respond input#submit.alt.disabled,
     .woocommerce #respond input#submit.alt.disabled:hover,
