@@ -344,9 +344,23 @@ body {
                                         width: auto;
 
                                         h2,
-                                        .cart-subtotal,
-                                        .woocommerce-shipping-destination {
+                                        .cart-subtotal {
                                             display: none;
+                                        }
+
+                                        .woocommerce-shipping-destination {
+                                            font-size: 0;
+                                            line-height: 0;
+
+                                            &::before {
+                                                content: "Los envíos se realizan a través de Fast Mail UNA VEZ a la semana.\a
+                                                La entrega a domicilio puede demorar entre CINCO y DIEZ días hábiles.";
+                                                font-size: 16px;
+                                                display: block;
+                                                line-height: 1;
+                                                margin-top: 15px;
+                                                white-space: break-spaces;
+                                            }
                                         }
 
                                         tr,
@@ -527,6 +541,29 @@ body {
                     .col-1 {
                         width: 100%;
 
+                        @media screen and (min-width: 768px) {
+                            padding: 0;
+                        }
+
+                        h3 {
+                            &::after {
+                                content: "Los envíos se realizan a través de Fast Mail UNA VEZ a la semana.\a
+                                La entrega a domicilio puede demorar entre CINCO y DIEZ días hábiles.";
+                                font-size: 16px;
+                                display: block;
+                                line-height: 1;
+                                margin-top: 20px;
+                                white-space: break-spaces;
+                                text-transform: none;
+                                letter-spacing: 0;
+                                margin-left: -12px;
+                            }
+
+                            @media screen and (min-width: 768px) {
+                                padding: 0 15px;
+                            }
+                        }
+
                         .woocommerce-billing-fields__field-wrapper {
                             @media (min-width: 600px) {
                                 display: flex;
@@ -550,7 +587,7 @@ body {
                 }
 
                 #order_review_heading {
-                    padding: 0 15px;
+                    padding: 30px 15px 0;
                 }
             }
         }

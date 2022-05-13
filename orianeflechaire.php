@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Oriane Flechaire
- * Version:     1.1.0
+ * Version:     1.1.1
  * Description: Customizaciones para el sitio orianeflechaire.com
  * Author:      Natalia Ciraolo and Josefina Lucía
  * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-define( 'ORIANE_FLECHAIRE_VERSION', '1.1.0' );
+define( 'ORIANE_FLECHAIRE_VERSION', '1.1.1' );
 
 add_action( 'init', function() {
     wp_enqueue_style( 
@@ -41,6 +41,16 @@ add_action( 'wp', function() {
 		wp_enqueue_script( 
 			'oriane_custom_cart_script', 
 			'/wp-content/plugins/orianeflechaire/js/custom-cart.js', 
+			array( 'jquery' ), 
+			ORIANE_FLECHAIRE_VERSION, 
+			true 
+		);
+	}
+	
+	if ( is_page( 'finalizar-compra' ) ) {
+		wp_enqueue_script( 
+			'oriane_custom_cart_script', 
+			'/wp-content/plugins/orianeflechaire/js/custom-cart-2.js', 
 			array( 'jquery' ), 
 			ORIANE_FLECHAIRE_VERSION, 
 			true 

@@ -3,31 +3,19 @@ Separar Envío y Facturación
 Menos datos para quien retira a domicilio (esto es a confirmar, lo iba a hablar con la contadora)
 
 1. Retiro (en Parque Chas) / Envío / Facturación 
+Hola, Ori!
+Te hago un par de aclaraciones para cuando te sientes a ver el sitio.
+Está puesto todo junto Envío y Facturación, pero se puede separar sin ningún problema. Como ayer nos comentabas que para todes les clientes vas a estar haciendo facturas, entendemos no habría que hacer una versión acotada de datos. En cualquier caso, se puede realizar y no hay ningún problema. 
 
-2. Personalización opciones de Mercado Pago
-Dice que hay demasiadas opciones
+Respecto a las opciones de pago de Mercado Pago, las mismas no dependen de nada de nuestro lado. Quizás puedas seleccionar las opciones de cuotas desde tu cuenta de Mercado Pago, donde generaste los tokens para la integración, pero no hay opciones de cuotas del lado del plugin.
 
-3. Pago por transferencia
-Habilitarlo
+Habilitamos el pago por transferencia. Lo que deberíamos hacer es enviar vía mail y/o en la respuesta de la web a la compra las instrucciones para realizar el pago. Si tenés un texto al respecto pasanoslo por favor para que podamos incluirlo.
 
-4. Respuesta automática a les compradores
-Son las mismas de antes
+Las respuestas automáticas a les compradores son las mismas de antes, eso no se modificó ya que viene del lado del plugin de WooCommerce y no del de Fast Mail. Podemos modificar los textos de acuerdo a lo que a vos te parezca.
 
-5. Gestión Fast Mail 
-(Sí, las guías no se cargan automáticamente, pero podés crearlas después de manera manual en el sistema)
+Respecto a la Gestión de Fast Mail, las guías no se generan automáticamente ya que las opciones de envío empleadas no son las de Fast Mail. Sin embargo, podés crearlas después de manera manual en el sistema. Esto sería, una vez realizada la compra, yendo a la sección WooCommerce -> Pedidos en el backend de WordPress. Allí se ingresa al pedido en cuestión, se selecciona el tipo de envío de Fast Mail, y se clickea en "Impactar". Lo que genera la guía en el sistema.
+Todo esto lo podemos ver juntas en una llamada!
 
-
-
-1. Tetera centrada / alineación del texto
-Quiere saber si se puede meter
-
-✓ Galería de fotos 6 en lugar de ocho
-
-3. Darle un “marco” al formulario de venta
-Textos
-
-✓ Suprimir espacio entre cintas de sellos postales. Necesitamos otra imagen de los sellos
-
-5. Tipografía general
+La tipografía utilizada en todos los textos en la página de venta del libro y la de finalizar compra es la ZillaSlab. Podemos optar por otra para las tablas de WooCommerce si te parece que no funcionan bien en dichos sectores.
 
 
