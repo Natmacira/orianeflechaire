@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Oriane Flechaire
- * Version:     1.1.1
+ * Version:     1.1.2
  * Description: Customizaciones para el sitio orianeflechaire.com
  * Author:      Natalia Ciraolo and Josefina Lucía
  * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-define( 'ORIANE_FLECHAIRE_VERSION', '1.1.1' );
+define( 'ORIANE_FLECHAIRE_VERSION', '1.1.2' );
 
 add_action( 'init', function() {
     wp_enqueue_style( 

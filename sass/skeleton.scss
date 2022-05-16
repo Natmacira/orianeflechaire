@@ -344,20 +344,18 @@ body {
                                         width: auto;
 
                                         h2,
-                                        .cart-subtotal {
+                                        .cart-subtotal,
+                                        .woocommerce-shipping-destination {
                                             display: none;
                                         }
 
-                                        .woocommerce-shipping-destination {
-                                            font-size: 0;
-                                            line-height: 0;
-
-                                            &::before {
-                                                content: "Los envíos se realizan a través de Fast Mail UNA VEZ a la semana.\a
+                                        #shipping_method.delivery {
+                                            &::after {
+                                                content: "Los envíos se realizan a través de Fast Mail para CABA y GBA, y Andreani para el resto del país.\a
                                                 La entrega a domicilio puede demorar entre CINCO y DIEZ días hábiles.";
                                                 font-size: 16px;
                                                 display: block;
-                                                line-height: 1;
+                                                line-height: 1.1;
                                                 margin-top: 15px;
                                                 white-space: break-spaces;
                                             }
@@ -528,6 +526,22 @@ body {
     }
 
     &.page-id-2445 /* Finalizar Compra */ {
+        &.pickup {
+            #content {
+                #primary {
+                    #customer_details {
+                        .col-1 {
+                            h3 {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         #content {
             #primary {
                 padding-left: 0;
@@ -547,7 +561,7 @@ body {
 
                         h3 {
                             &::after {
-                                content: "Los envíos se realizan a través de Fast Mail UNA VEZ a la semana.\a
+                                content: "Los envíos se realizan a través de Fast Mail para CABA y GBA, y Andreani para el resto del país.\a
                                 La entrega a domicilio puede demorar entre CINCO y DIEZ días hábiles.";
                                 font-size: 16px;
                                 display: block;
@@ -582,6 +596,21 @@ body {
                                 visibility: hidden;
                                 position: absolute;
                             }
+                        }
+
+                        #billing_address_1_field {
+                            label {
+                                font-size: 0;
+
+                                &:before {
+                                    content: "Dirección";
+                                    font-size: 16px;
+                                }
+                            }
+
+                            input::placeholder {
+                                font-size: 0;
+                              }
                         }
                     }
                 }

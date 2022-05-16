@@ -6,15 +6,19 @@ window.addEventListener( 'DOMContentLoaded', function () {
     if ( localPickup && heading ) {
         if ( localPickup.checked ) {
             heading.innerText = 'Facturación';
+            document.body.classList.add( 'pickup' );
         } else {
             heading.innerText = 'Facturación y envío';
+            document.body.classList.remove( 'pickup' );
         }
 
         localPickup.addEventListener( 'change', function() {
             if ( localPickup.checked ) {
                 heading.innerText = 'Facturación';
+                document.body.classList.add( 'pickup' );
             } else {
                 heading.innerText = 'Facturación y envío';
+                document.body.classList.remove( 'pickup' );
             }
         } );
     }
@@ -33,15 +37,19 @@ window.addEventListener( 'DOMContentLoaded', function () {
                 if ( localPickup && heading ) {
                     if ( localPickup.checked ) {
                         heading.innerText = 'Facturación';
+                        document.body.classList.add( 'pickup' );
                     } else {
                         heading.innerText = 'Facturación y envío';
+                        document.body.classList.remove( 'pickup' );
                     }
 
                     localPickup.addEventListener( 'change', function() {
                         if ( localPickup.checked ) {
                             heading.innerText = 'Facturación';
+                            document.body.classList.add( 'pickup' );
                         } else {
                             heading.innerText = 'Facturación y envío';
+                            document.body.classList.remove( 'pickup' );
                         }
                     } );
                 }
